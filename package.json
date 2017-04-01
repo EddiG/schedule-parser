@@ -1,0 +1,9 @@
+{
+  "name": "schedule-parser",
+  "version": "1.0.0",
+  "description": "Parser for the restaurant schedule",
+  "main": "index.js",
+  "repository": "https://github.com/EddiG/schedule-parser.git",
+  "author": "Eduard Gilmutdinov <edgilmutdinov@gmail.com>",
+  "license": "MIT"
+}
