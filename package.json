@@ -5,5 +5,8 @@
   "main": "index.js",
   "repository": "https://github.com/EddiG/schedule-parser.git",
   "author": "Eduard Gilmutdinov <edgilmutdinov@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^19.0.2"
+  }
 }
