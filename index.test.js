@@ -80,7 +80,7 @@ test('parser should return human readable times', () => {
       "friday": [
 	{
 	  "type": "open",
-	  "value": 36000
+	  "value": 37800
 	}
       ],
       "saturday": [
@@ -118,7 +118,7 @@ test('parser should return human readable times', () => {
 Tuesday: 10 am - 6 pm
 Wednesday: 9 am - 11 am, 4 pm - 11 pm
 Thursday: Closed
-Friday: 10 am - 2 am
+Friday: 10.30 am - 2 am
 Saturday: 12 am - 11 am, 4 pm - 11 pm
 Sunday: 4 pm - 1 am`
   );
