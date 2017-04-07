@@ -1,30 +1,22 @@
 const _ = require('lodash');
 
-const daysOfWeek = [
-  'monday',
-  'tuesday',
-  'wednesday',
-  'thursday',
-  'friday',
-  'saturday',
-  'sunday',
-];
+const daysOfWeek = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 
-const getPrevDay = day => {
+const getPrevDay = (day) => {
   const dayIndex = daysOfWeek.indexOf(day);
   const prevDayIndex = dayIndex === 0 ? daysOfWeek.length - 1 : dayIndex - 1;
   return daysOfWeek[prevDayIndex];
 };
 
-exports.getFlatSchedule = schedule => {
+exports.getFlatSchedule = (schedule) => {
   const days = _.keys(schedule);
   let order = 0;
 
-  const getFlatDaySchedule = day => {
+  const getFlatDaySchedule = (day) => {
     const daySchedule = schedule[day];
     if (_.isArray(daySchedule) && daySchedule.length) {
-      return daySchedule.map(time =>
-        _.assign({}, time, { day, order: order++ }));
+      /* eslint-disable no-plusplus */
+      return daySchedule.map(time => _.assign({}, time, { day, order: order++ }));
     }
     return [];
   };
@@ -32,13 +24,13 @@ exports.getFlatSchedule = schedule => {
   return days.reduce((acc, day) => [...acc, ...getFlatDaySchedule(day)], []);
 };
 
-exports.getNormalizedSchedule = flatSchedule => {
+exports.getNormalizedSchedule = (flatSchedule) => {
   let day = '';
   let state = 'closed';
 
-  const processClosed = time => {
+  const processClosed = (time) => {
     switch (time.type) {
-      case 'close':
+      case 'close': // eslint-disable-line no-case-declarations
         const prevDay = getPrevDay(time.day);
 
         let order = time.order;
@@ -55,7 +47,7 @@ exports.getNormalizedSchedule = flatSchedule => {
     }
   };
 
-  const processOpened = time => {
+  const processOpened = (time) => {
     switch (time.type) {
       case 'open':
         return null;
@@ -82,7 +74,7 @@ exports.getNormalizedSchedule = flatSchedule => {
           return [...acc, time];
       }
     },
-    []
+    [],
   );
 
   return _.sortBy(normalizedSchedule, time => time.order);

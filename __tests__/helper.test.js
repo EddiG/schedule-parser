@@ -1,5 +1,5 @@
-const getFlatSchedule = require('./helper').getFlatSchedule;
-const getNormalizedSchedule = require('./helper').getNormalizedSchedule;
+const getFlatSchedule = require('../helper').getFlatSchedule;
+const getNormalizedSchedule = require('../helper').getNormalizedSchedule;
 
 test('getFlatSchedule should return flat schedule', () => {
   const schedule = {
