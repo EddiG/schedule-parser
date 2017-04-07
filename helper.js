@@ -19,6 +19,7 @@ const getPrevDay = day => {
 exports.getFlatSchedule = schedule => {
   const days = _.keys(schedule);
   let order = 0;
+
   const getFlatDaySchedule = day => {
     const daySchedule = schedule[day];
     if (_.isArray(daySchedule) && daySchedule.length) {
@@ -42,7 +43,7 @@ exports.getNormalizedSchedule = flatSchedule => {
 
         let order = time.order;
         if (order === 0) {
-          const maxOrder = _.maxBy(flatSchedule, time => time.order).order;
+          const maxOrder = _.maxBy(flatSchedule, t => t.order).order;
           order = maxOrder + 1;
         }
 
