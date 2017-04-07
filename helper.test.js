@@ -1,4 +1,3 @@
-const _ = require('lodash');
 const getFlatSchedule = require('./helper').getFlatSchedule;
 const getNormalizedSchedule = require('./helper').getNormalizedSchedule;
 
