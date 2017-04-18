@@ -1,5 +1,18 @@
 # Schedule parser
 
+### Install
+```bash
+npm install schedule-parser --save
+```
+
+### Usage
+```js
+import parse from 'schedule-parser';
+
+const json = '';
+const result = parse(json);
+```
+
 ### Input
 Input JSON consist of keys indicating days of week and corresponding opening hours as values.
 One input JSON includes data for one restaurant.
